@@ -17,3 +17,4 @@ Wiki_pathways/
 *.jpg
 *.tbl
 .idea/
+.Rproj.user
