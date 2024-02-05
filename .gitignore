@@ -18,3 +18,5 @@ Wiki_pathways/
 *.tbl
 .idea/
 .Rproj.user
+*.zip
+
