@@ -2,14 +2,14 @@ from easy_entrez import EntrezAPI
 import pandas as pd
 entrez_api = EntrezAPI('your-tool-name','your.email@gmail.com')
 
-df = pd.read_csv('fibromyalgia_buildGRCh38.tsv', sep='\t')
+df = pd.read_csv('fibromyalgia_buildGRCh37.tsv', sep='\t')
 
 df = df[['chromosome', 'base_pair_location']]
 
 rsID = []
 for i in range(len(df)):
     results = entrez_api.search(
-        dict(chromosome=df['chromosome'][i], organism='human', position=df['base_pair_location'][i]),
+        dict(chromosome=df['chromosome'][i], organism='human', position_grch37=df['base_pair_location'][i]),
         database='snp',
         max_results=10
     )
