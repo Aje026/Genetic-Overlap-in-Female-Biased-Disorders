@@ -21,7 +21,7 @@ for i in range(len(df)):
     else:
         rsID.append(None)
 
-
+print('done')
 df['rs_id'] = rsID
 
 df.to_csv('fibromyalgia_rsid.txt', sep='\t', index=False)
