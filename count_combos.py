@@ -4,7 +4,7 @@ from itertools import combinations
 
 
 # Load file to dataframe
-df = pd.read_csv('snps_all.txt', sep='\t', index_col=0)
+df = pd.read_csv('all_snps_binary.txt', sep='\t', index_col=0)
 
 # Set a seed for reproducibility
 np.random.seed(42)
