@@ -3,7 +3,7 @@
 *.tgz
 *.xlsx
 FUMA_downloads/
-FUMA_downloads_all_tissue/
+FUMA_dowloads_all_tissue/
 Genes/
 genes_per_dataframe/
 genes_per_disorder_new/
@@ -19,4 +19,8 @@ Wiki_pathways/
 .idea/
 .Rproj.user
 *.zip
+genes_to_EnrichR/
+FinnGen/
+eqtl/
+
 
