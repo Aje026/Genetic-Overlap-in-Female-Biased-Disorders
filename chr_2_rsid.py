@@ -1,15 +1,19 @@
 from easy_entrez import EntrezAPI
 import pandas as pd
+import numpy as np
+import time
 entrez_api = EntrezAPI('your-tool-name','your.email@gmail.com')
 
-df = pd.read_csv('fibromyalgia_buildGRCh37.tsv', sep='\t')
+df = pd.read_csv('spontanious_preterm_birth.tsv', sep='\t')
 
 df = df[['chromosome', 'base_pair_location']]
-
+#chunks = np.array_split(df,10)
+rsid_dfs = []
+#for df in chunks:
 rsID = []
 for i in range(len(df)):
     results = entrez_api.search(
-        dict(chromosome=df['chromosome'][i], organism='human', position_grch37=df['base_pair_location'][i]),
+        dict(chromosome=df['chromosome'][i], organism='human', position=df['base_pair_location'][i]),
         database='snp',
         max_results=10
     )
@@ -20,8 +24,11 @@ for i in range(len(df)):
         rsID.append('rs' + idlist[-1])
     else:
         rsID.append(None)
-
-print('done')
+        
+    time.sleep(1)
+print('one done')
 df['rs_id'] = rsID
+rsid_dfs.append(df)
 
-df.to_csv('fibromyalgia_rsid.txt', sep='\t', index=False)
+concat_diabetes = pd.concat(rsid_dfs)
+concat_diabetes.to_csv('preterm_birth.txt', sep='\t', index=False)
