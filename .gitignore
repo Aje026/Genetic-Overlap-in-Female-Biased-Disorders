@@ -22,5 +22,9 @@ Wiki_pathways/
 genes_to_EnrichR/
 FinnGen/
 eqtl/
+*.stats
+
+
+
 
 
