@@ -23,6 +23,9 @@ genes_to_EnrichR/
 FinnGen/
 eqtl/
 *.stats
+*.tabular
+*.bed
+*.gz
 
 
 
