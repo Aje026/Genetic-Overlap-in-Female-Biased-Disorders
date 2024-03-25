@@ -4,7 +4,7 @@ import os
 log_files_directory = os.getcwd()  # Use the current working directory
 
 # Loop through log files from 2.log to 36.log
-for i in range(2, 37):
+for i in range(2, 38):
     log_file_path = f'{i}.log'
     
     # Read the contents of the log file
