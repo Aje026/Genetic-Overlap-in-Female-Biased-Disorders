@@ -26,6 +26,10 @@ eqtl/
 *.tabular
 *.bed
 *.gz
+chronic_pain-bgen.stats
+*.vcf
+
+
 
 
 
