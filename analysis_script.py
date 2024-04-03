@@ -14,6 +14,8 @@ from scipy.cluster import hierarchy
 from sklearn.metrics import pairwise_distances
 from scipy.spatial.distance import pdist, squareform
 
+#set seed for reproducibility
+np.random.seed(42)
 
 def read_SNPs_and_genes(path, column_names):
  
@@ -79,6 +81,7 @@ print('max genes: ', max_combo_genes)
 
 
 def count_combos(binary_df, max_combo, randomized=False):
+    
     # Get all possible combinations of disorders
     all_combinations = []
     for r in range(2, max_combo):
@@ -88,7 +91,7 @@ def count_combos(binary_df, max_combo, randomized=False):
     counts_df = pd.DataFrame(index=all_combinations)
 
     if randomized:
-        np.random.seed(42)  # Set a seed for reproducibility in randomized data
+          # Set a seed for reproducibility in randomized data
         num_iterations = 10
         # Perform the iterations for randomized data
         for i in range(1, num_iterations+1):
