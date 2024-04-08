@@ -29,6 +29,7 @@ eqtl/
 *.stats
 chronic_pain-bgen.stats
 *.vcf
+genes_for_protein
 
 
 

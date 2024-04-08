@@ -117,7 +117,8 @@ snp_combos_rand = count_combos(all_snps_binary, 6, randomized=True)
 gene_combos = count_combos(all_genes_binary, 6)
 gene_combos_rand = count_combos(all_genes_binary, 6, randomized=True)
 
-
+print(snp_combos.head())
+print(snp_combos_rand.head())
 
 def calculate_z_score(df, df_rand, threshold, count):
     
@@ -149,17 +150,17 @@ def calculate_z_score(df, df_rand, threshold, count):
 
 
 z2_snps = calculate_z_score(snp_combos, snp_combos_rand, 2, 5)
-z3_snps = calculate_z_score(snp_combos, snp_combos_rand, 3, 5)
+#z3_snps = calculate_z_score(snp_combos, snp_combos_rand, 3, 5)
 z2_genes = calculate_z_score(gene_combos, gene_combos_rand, 2, 5)
-z3_genes = calculate_z_score(gene_combos, gene_combos_rand, 3, 5)
+#z3_genes = calculate_z_score(gene_combos, gene_combos_rand, 3, 5)
 
 print('Number of combinations sharing SNPs with z-value >= 2: ', len(z2_snps))
-print('Number of combinations sharing SNPs with z-value >= 3: ', len(z3_snps))
+#print('Number of combinations sharing SNPs with z-value >= 3: ', len(z3_snps))
 print('Number of combinations sharing genes with z-value >= 2: ', len(z2_genes))
-print('Number of combinations sharing genes with z-value >= 3: ', len(z3_genes))
+#print('Number of combinations sharing genes with z-value >= 3: ', len(z3_genes))
 
 z2_snps.to_csv('snps_zscore2.csv')
-z3_snps.to_csv('snps_zscore3.csv')
+#z3_snps.to_csv('snps_zscore3.csv')
 z2_genes.to_csv('genes_zscore2.csv')
-z3_genes.to_csv('genes_zscore3.csv')
+#z3_genes.to_csv('genes_zscore3.csv')
 
