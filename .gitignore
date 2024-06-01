@@ -31,6 +31,9 @@ chronic_pain-bgen.stats
 *.vcf
 genes_for_protein
 *.log
+ensemble_gene_names/
+snp_tissue_disorder.ipynb
+
 
 
 
