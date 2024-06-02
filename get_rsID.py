@@ -2,11 +2,12 @@ import pandas as pd
 
 #get rsID for datasets where these are missing
 
+#read reference file
 build37 = pd.read_csv('build37.vcf', sep='\t', header=55)
 build37 = build37[['#CHROM', 'POS', 'ID']]
 build37 = build37.rename(columns={'#CHROM':'chr', 'POS':'pos'})
 
-
+#read files and merge with reference file
 fibromyalgia=pd.read_csv('fibromyalgia_buildGRCh37.tsv',sep='\t')
 fibromyalgia=fibromyalgia.rename(columns={'chromosome':'chr','base_pair_location':'pos'})
 fibromyalgia_updated = pd.merge(fibromyalgia, build37, on=['chr', 'pos'], how='inner')
