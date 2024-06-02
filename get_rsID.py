@@ -19,4 +19,6 @@ pcos.drop('MarkerName', axis=1, inplace=True)
 
 # Merge sumstats with SNP dataset
 pcos_updated = pd.merge(pcos, build37, on=['chr', 'pos'], how='inner')
+#pcos_updated = pcos_updated[pcos_updated['p_value'] <= 0.05]  #filter on p-value if needed before using file as input in FUMA
 pcos_updated.to_csv('pcos_updated.tsv', index=False, sep='\t') 
+
