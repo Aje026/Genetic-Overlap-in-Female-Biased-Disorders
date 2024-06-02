@@ -13,13 +13,10 @@ fibromyalgia=fibromyalgia.rename(columns={'chromosome':'chr','base_pair_location
 fibromyalgia_updated = pd.merge(fibromyalgia, build37, on=['chr', 'pos'], how='inner')
 fibromyalgia_updated.to_csv('fibromyalgia_updated3.tsv', sep='\t', index=False) 
 
-
-
 endometriosis = pd.read_csv('endometriosis_buildgrch37.txt', sep='\t')
 endometriosis=endometriosis.rename(columns={'chromosome':'chr','base_pair_location':'pos'})
 endometriosis_updated = pd.merge(endometriosis, build37, on=['chr', 'pos'], how='inner')
 endometriosis_updated.to_csv('endometriosis_updated3.tsv', index=False, sep='\t')
-
 
 preeclampsia = pd.read_csv('preeclampsia.tsv', sep='\t')
 preeclampsia=preeclampsia.rename(columns={'chromosome':'chr','base_pair_location':'pos'})
