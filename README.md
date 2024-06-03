@@ -1,6 +1,6 @@
-Genetic overlap in female-biased disorders and diseases
+# Genetic overlap in female-biased disorders and diseases
 
-This project aimed to find overlaps between disorders that mainly affects women.
+## This project aimed to find overlaps between disorders that mainly affects women.
 Overlap between cases of disorders and diseases and genetic overlap has been investigated
 
 
