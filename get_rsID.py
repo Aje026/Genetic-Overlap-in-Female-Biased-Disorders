@@ -3,7 +3,7 @@ import pandas as pd
 # An example of how some datasets had to be merged with the Human SNP dataset to get rsID
 
 
-# Read the Hman SNP dataset from NCBI an keep only relevant columns
+# Read the Human SNP dataset from NCBI an keep only relevant columns
 build37 = pd.read_csv('build37.vcf', sep='\t', header=55) 
 build37 = build37[['#CHROM', 'POS', 'ID']]
 build37 = build37.rename(columns={'#CHROM':'chr', 'POS':'pos'})
